@@ -1,0 +1,282 @@
+
+// Maid About Town
+
+// By Patrick Whitehouse
+
+
+////////////////////////////////////////////////
+
+
+// Reset
+
+/* http://meyerweb.com/eric/tools/css/reset/
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+// Variables
+
+$blue: #556270;
+$yellow: #FFFFF3;
+$grey: #E0E3DA;
+$purple: #A593E0;
+
+
+// Global Styling
+
+@font-face {
+    font-family: 'Proxima';
+    src: url('../etc/Proxima.otf'),url('../etc/Proxima.ttf');
+}
+
+body{
+  background-color: $yellow;
+  font-family: 'Proxima', sans-serif;
+  -webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+  color: $blue;
+}
+
+
+.wrapper{
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+h1{
+  font-size: 5em;
+  font-weight: 700;
+}
+
+h2{
+  font-size: 1.8em;
+}
+
+h3,h4,h5,h6{
+  font-size: 1.2em;
+  margin: 20px 0;
+  font-weight: 700;
+}
+
+p{
+  font-weight: 300;
+  line-height: 1.8;
+  margin: 10px 0;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+img{
+  padding: 20px 0;
+  height: auto;
+  width: auto;
+}
+
+// Hero Section
+
+
+nav{
+  width: 100%;
+  color: $purple;
+  font-weight: 700;
+  padding-top: 30px;
+  font-size: 1.15em;
+}
+
+nav ul{
+  list-style: none;
+  text-align: right;
+}
+
+nav li{
+  display: inline-block;
+  padding: 0 10px;
+}
+
+nav span{
+  float: left;
+}
+
+section.intro{
+  width: 100%;
+  height: 100vh;
+  background:
+  linear-gradient(to top, rgba(255, 255, 243, .85), rgba(255, 255, 243, .8)) ,url('../images/hero_main.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.hero_intro{
+  text-align: center;
+  height: auto;
+  width: 100%;
+}
+
+.full_height{
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.full_height h1{
+  letter-spacing: .03em;
+  margin-bottom: .2em;
+}
+
+// About Section
+
+section.about{
+  margin-bottom: 50px;
+}
+
+.intro_images{
+  display: flex;
+  justify-content: space-between;
+}
+
+
+// Testimonial
+
+section.testimonial{
+  width: 100%;
+  background-color: $grey;
+  height: 150px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Merriweather', serif;
+}
+
+.testimonial_person{
+  width: 100px;
+  height: 100px;
+  background-image: url('../images/portrait_1.jpg');
+  background-position: center;
+  background-size: cover;
+  border-radius: 100%;
+  margin-right: 50px;
+}
+
+
+// Responsive Shizz
+
+
+@media screen and (max-width: 960px){
+
+  h1{
+    font-weight: 300;
+  }
+
+  h2{
+    font-weight: 300;
+  }
+
+  .wrapper{
+    padding: 0 20px;
+  }
+
+  h3{
+    font-size: 1.6em;
+  }
+
+  p{
+    font-size: 1.2em;
+    line-height: 2.2;
+  }
+
+  nav {
+    font-weight: 300;
+  }
+
+  .intro_images{
+    display: flex;
+    justify-content:center;
+    align-items: center;
+    width: 100%;
+    flex-wrap: wrap;
+
+    img{
+      width: 80%;
+    }
+  }
+}
+
+@media screen and (max-width: 568px){
+
+
+
+  h1{
+    font-size: 2.5em;
+    font-weight: 300;
+  }
+
+  h2{
+    font-size: 1em;
+    font-weight: 300;
+  }
+
+  body{
+    font-size: 80%;
+  }
+
+  nav{
+    ul{
+      text-align: center;
+    }
+    span{
+     position: absolute !important;
+     top: -9999px !important;
+     left: -9999px !important;
+    }
+  }
+
+
+}
